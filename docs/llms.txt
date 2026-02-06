@@ -1,0 +1,744 @@
+# @gpt-core/admin
+
+> TypeScript Admin SDK for GPT Core - platform administration, webhooks, and system management.
+> Version: 1.1
+> WARNING: Server-side only. Never expose admin tokens in client code.
+
+## Installation
+
+```bash
+npm install @gpt-core/admin
+```
+
+## Setup
+
+```typescript
+import { client } from '@gpt-core/admin';
+
+client.setConfig({
+  baseUrl: 'https://api.example.com/admin',
+  headers: {
+    Authorization: 'Bearer YOUR_TOKEN',
+  },
+});
+```
+
+## Accounts
+
+- `getAccounts()` - List accounts
+- `getAccountsBy-tenantByTenantId()` - Get by tenant
+- `getAccountsById()` - Get accounts
+- `patchAccountsByIdCredit()` - Update credit
+- `patchAccountsByIdDebit()` - Update debit
+
+## Agent stats
+
+- `getAgentsByIdStats()` - Get stats
+
+## Agent test result
+
+- `postAgent-test-results()` - Create agent test results
+
+## Agent training stats
+
+- `getAgentsByIdTraining-stats()` - Get training stats
+
+## Agent usage
+
+- `getAgentsByIdUsage()` - Get usage
+- `getAgentsUsage()` - List usage
+
+## Agent version comparison
+
+- `postAgent-version-comparisons()` - Create agent version comparisons
+
+## Agent version revision
+
+- `getAgent-version-revisions()` - List agent version revisions
+- `getAgent-version-revisionsById()` - Get agent version revisions
+
+## AI Agents
+
+- `getAgent-versions()` - List agent versions
+- `getAgent-versionsById()` - Get agent versions
+- `getAgent-versionsByIdMetrics()` - Get metrics
+- `getAgent-versionsByIdRevisions()` - Get revisions
+- `getAgents()` - List agents
+- `getAgentsById()` - Get agents
+- `getAgentsByIdSchema-versions()` - Get schema versions
+- `getAgentsByIdTraining-examples()` - Get training examples
+- `postAgent-versions()` - Create agent versions
+- `postAgent-versionsByIdAdd-system-field()` - Create add system field
+- `postAgent-versionsByIdRemove-system-field()` - Create remove system field
+- `postAgent-versionsByIdSet-system-fields()` - Create set system fields
+- `postAgentsByIdAnalyze-training()` - Create analyze training
+- `postAgentsByIdClone()` - Create clone
+- `postAgentsByIdDiscover-schema()` - Create discover schema
+- `postAgentsByIdExport()` - Create export
+- `postAgentsByIdPublish-version()` - Create publish version
+- `postAgentsByIdRestore-version()` - Create restore version
+- `postAgentsByIdSchema-versions()` - Create schema versions
+- `postAgentsByIdSchema-versionsByVersionIdActivate()` - Create activate
+- `postAgentsByIdTeach()` - Create teach
+- `postAgentsByIdTest()` - Create test
+- `postAgentsByIdValidate()` - Create validate
+- `postAgentsClone-for-workspace()` - Create clone for workspace
+- `postAgentsDiscover-schema()` - Create discover schema
+- `postAgentsImport()` - Create import
+- `postAgentsPredict()` - Create predict
+- `patchAgentsByIdSchema-versionsByVersionId()` - Update schema versions
+- `deleteAgent-versionsById()` - Delete agent versions
+- `deleteAgentsByIdTraining-examplesByExampleId()` - Delete training examples
+
+## Ai config
+
+- `getSysAi-config()` - List ai config
+- `getSysAi-configById()` - Get ai config
+- `postSysAi-config()` - Create ai config
+- `patchSysAi-configById()` - Update ai config
+
+## AI Training
+
+- `getTraining-examples()` - List training examples
+- `getTraining-examplesById()` - Get training examples
+- `getTraining-sessionsAgentsByAgentIdSessions()` - Get sessions
+- `getTraining-sessionsById()` - Get training sessions
+- `postTraining-examples()` - Create training examples
+- `postTraining-examplesBulk()` - Create bulk
+- `postTraining-examplesBulk-delete()` - Create bulk delete
+- `postTraining-examplesSearch()` - Create search
+- `patchTraining-examplesById()` - Update training examples
+- `deleteTraining-examplesById()` - Delete training examples
+- `deleteTraining-sessionsById()` - Delete training sessions
+
+## Analytics
+
+- `getLlmAnalytics()` - List llm analytics
+- `getLlmAnalyticsById()` - Get llm analytics
+- `getLlmAnalyticsCosts()` - List costs
+- `getLlmAnalyticsPlatform()` - List platform
+- `getLlmAnalyticsSummary()` - List summary
+- `getLlmAnalyticsUsage()` - List usage
+- `getLlmAnalyticsWorkspace()` - List workspace
+- `postLlmAnalytics()` - Create llm analytics
+
+## API Keys
+
+- `getApi-keys()` - List api keys
+- `getApi-keysActive()` - List active
+- `getApi-keysById()` - Get api keys
+- `getApi-keysStats()` - List stats
+- `postApi-keys()` - Create api keys
+- `patchApi-keysById()` - Update api keys
+- `patchApi-keysByIdAllocate()` - Update allocate
+- `patchApi-keysByIdReset-period()` - Update reset period
+- `patchApi-keysByIdRevoke()` - Update revoke
+- `patchApi-keysByIdRotate()` - Update rotate
+- `patchApi-keysByIdSet-budget()` - Update set budget
+- `deleteApi-keysById()` - Delete api keys
+
+## Applications
+
+- `getApplications()` - List applications
+- `getApplicationsBy-slugBySlug()` - Get by slug
+- `getApplicationsById()` - Get applications
+- `getApplicationsCurrent()` - List current
+- `postApplications()` - Create applications
+- `patchApplicationsById()` - Update applications
+- `patchApplicationsByIdAllocate-credits()` - Update allocate credits
+- `patchApplicationsByIdGrant-credits()` - Update grant credits
+- `deleteApplicationsById()` - Delete applications
+
+## Audit-log
+
+- `getAudit-logs()` - List audit logs
+- `getAudit-logsActivity()` - List activity
+
+## Balance
+
+- `getBalances()` - List balances
+- `getBalancesById()` - Get balances
+
+## Billing
+
+- `getCredit-packages()` - List credit packages
+- `getCredit-packagesById()` - Get credit packages
+- `getCredit-packagesSlugBySlug()` - Get slug
+- `getPlans()` - List plans
+- `getPlansById()` - Get plans
+- `getPlansSlugBySlug()` - Get slug
+- `getSubscriptions()` - List subscriptions
+- `getSubscriptionsBy-tenantByTenantId()` - Get by tenant
+- `getSubscriptionsById()` - Get subscriptions
+- `getWallet()` - List wallet
+- `getWalletStorage-breakdown()` - List storage breakdown
+- `getWalletUsage()` - List usage
+- `getWalletUsage-breakdown()` - List usage breakdown
+- `postCredit-packages()` - Create credit packages
+- `postPlans()` - Create plans
+- `postSubscriptions()` - Create subscriptions
+- `patchCredit-packagesById()` - Update credit packages
+- `patchPlansById()` - Update plans
+- `patchSubscriptionsById()` - Update subscriptions
+- `patchSubscriptionsByIdCancel()` - Update cancel
+- `patchWalletAddons()` - Update addons
+- `patchWalletAddonsByAddonSlugCancel()` - Update cancel
+- `patchWalletCredits()` - Update credits
+- `patchWalletPlan()` - Update plan
+- `patchWalletStorage()` - Update storage
+- `deleteCredit-packagesById()` - Delete credit packages
+- `deletePlansById()` - Delete plans
+- `deleteSubscriptionsById()` - Delete subscriptions
+
+## Bulk dismissal result
+
+- `postWorkspacesByWorkspaceIdExtractionDocumentsDismiss-all-trained()` - Create dismiss all trained
+
+## Bulk reprocess result
+
+- `postExtractionDocumentsBulk-reprocess()` - Create bulk reprocess
+
+## Config
+
+- `getConfigs()` - List configs
+- `postConfigs()` - Create configs
+- `patchConfigsByKey()` - Update configs
+
+## Config enum
+
+- `getExtractionConfig-enums()` - List config enums
+- `getExtractionConfig-enumsById()` - Get config enums
+- `postExtractionConfig-enums()` - Create config enums
+- `patchExtractionConfig-enumsById()` - Update config enums
+
+## Consent record
+
+- `getConsent-records()` - List consent records
+- `getConsent-recordsActive()` - List active
+- `getConsent-recordsById()` - Get consent records
+- `postConsent-records()` - Create consent records
+- `patchConsent-recordsByIdWithdraw()` - Update withdraw
+
+## Conversations
+
+- `getAiConversations()` - List conversations
+- `getAiConversationsById()` - Get conversations
+- `postAiConversations()` - Create conversations
+- `patchAiConversationsById()` - Update conversations
+- `deleteAiConversationsById()` - Delete conversations
+
+## Customer
+
+- `getCustomersById()` - Get customers
+- `postCustomers()` - Create customers
+- `patchCustomersById()` - Update customers
+- `deleteCustomersById()` - Delete customers
+
+## Document chunk
+
+- `getAiChunksDocumentByDocumentId()` - Get document
+- `postAiChunksSearch()` - Create search
+
+## Document Extraction
+
+- `getExtractionDocuments()` - List documents
+- `getExtractionDocumentsById()` - Get documents
+- `getExtractionDocumentsByIdStatus()` - Get status
+- `getExtractionDocumentsByIdView()` - Get view
+- `getExtractionDocumentsWorkspaceByWorkspaceId()` - Get workspace
+- `getExtractionDocumentsWorkspaceByWorkspaceIdBy-statusByStatus()` - Get by status
+- `getExtractionDocumentsWorkspaceByWorkspaceIdExcluded()` - Get excluded
+- `getExtractionDocumentsWorkspaceByWorkspaceIdReview-queue()` - Get review queue
+- `getExtractionDocumentsWorkspaceByWorkspaceIdTrained()` - Get trained
+- `getExtractionDocumentsWorkspaceByWorkspaceIdTrashed()` - Get trashed
+- `postExtractionDocumentsBegin-upload()` - Create begin upload
+- `postExtractionDocumentsFind-or-begin-upload()` - Create find or begin upload
+- `postExtractionDocumentsUpload()` - Create upload
+- `patchExtractionDocumentsByIdCancel()` - Update cancel
+- `patchExtractionDocumentsByIdDismiss()` - Update dismiss
+- `patchExtractionDocumentsByIdDismiss-training()` - Update dismiss training
+- `patchExtractionDocumentsByIdExclude()` - Update exclude
+- `patchExtractionDocumentsByIdFinish-upload()` - Update finish upload
+- `patchExtractionDocumentsByIdInclude()` - Update include
+- `patchExtractionDocumentsByIdMark-trained()` - Update mark trained
+- `patchExtractionDocumentsByIdReprocess()` - Update reprocess
+- `patchExtractionDocumentsByIdRestore()` - Update restore
+- `patchExtractionDocumentsByIdStatus()` - Update status
+- `patchExtractionDocumentsByIdVerification()` - Update verification
+- `deleteExtractionDocumentsById()` - Delete documents
+
+## Document stats
+
+- `getDocumentsStats()` - List stats
+
+## Email template
+
+- `getApplicationsByApplicationIdEmail-templates()` - Get email templates
+- `getApplicationsByApplicationIdEmail-templatesBySlug()` - Get email templates
+- `postApplicationsByApplicationIdEmail-templates()` - Create email templates
+- `postApplicationsByApplicationIdEmail-templatesBySlugPreview()` - Create preview
+- `postApplicationsByApplicationIdEmail-templatesBySlugTest()` - Create test
+- `patchApplicationsByApplicationIdEmail-templatesBySlug()` - Update email templates
+- `deleteApplicationsByApplicationIdEmail-templatesBySlug()` - Delete email templates
+
+## Embedding
+
+- `postAiEmbed()` - Create embed
+
+## Extraction Batches
+
+- `getExtractionBatchesById()` - Get batches
+- `getExtractionBatchesByIdUpload-urls()` - Get upload urls
+- `getExtractionBatchesWorkspaceByWorkspaceId()` - Get workspace
+- `postExtractionBatches()` - Create batches
+- `deleteExtractionBatchesById()` - Delete batches
+
+## Extraction export
+
+- `getWorkspacesByWorkspaceIdExtractionExports()` - Get exports
+- `getWorkspacesByWorkspaceIdExtractionExportsById()` - Get exports
+- `postWorkspacesByWorkspaceIdExtractionExports()` - Create exports
+
+## Extraction Results
+
+- `getExtractionResults()` - List results
+- `getExtractionResultsById()` - Get results
+- `getExtractionResultsDocumentByDocumentId()` - Get document
+- `getExtractionResultsDocumentByDocumentIdHistory()` - Get history
+- `getExtractionResultsWorkspaceByWorkspaceId()` - Get workspace
+- `patchExtractionResultsById()` - Update results
+- `patchExtractionResultsByIdRegenerate()` - Update regenerate
+- `patchExtractionResultsByIdSave-corrections()` - Update save corrections
+- `deleteExtractionResultsById()` - Delete results
+
+## Field mapping confirmation
+
+- `postWorkspacesByWorkspaceIdExtractionByDocumentIdMapping()` - Create mapping
+
+## Field mapping result
+
+- `getWorkspacesByWorkspaceIdExtractionByDocumentIdMapping()` - Get mapping
+
+## Field Templates
+
+- `getField-templates()` - List field templates
+- `getField-templatesById()` - Get field templates
+- `postField-templates()` - Create field templates
+- `deleteField-templatesById()` - Delete field templates
+
+## Invitations
+
+- `getInvitations()` - List invitations
+- `getInvitationsConsumeByToken()` - Get consume
+- `getInvitationsMe()` - List me
+- `postInvitations()` - Create invitations
+- `postInvitationsAccept-by-token()` - Create accept by token
+- `patchInvitationsByIdAccept()` - Update accept
+- `patchInvitationsByIdAccept-by-user()` - Update accept by user
+- `patchInvitationsByIdDecline()` - Update decline
+- `patchInvitationsByIdResend()` - Update resend
+- `patchInvitationsByIdRevoke()` - Update revoke
+
+## Isv revenue
+
+- `getIsv-revenue()` - List isv revenue
+- `getIsv-revenueById()` - Get isv revenue
+- `postIsv-revenue()` - Create isv revenue
+
+## Isv settlement
+
+- `getIsv-settlements()` - List isv settlements
+- `getIsv-settlementsById()` - Get isv settlements
+- `postIsv-settlements()` - Create isv settlements
+- `patchIsv-settlementsById()` - Update isv settlements
+
+## Knowledge Graph
+
+- `getAiGraphEdges()` - List edges
+- `getAiGraphNodes()` - List nodes
+- `getAiGraphNodesBySourceNodeIdRelated()` - Get related
+- `getAiGraphNodesLabelByLabel()` - Get label
+- `postAiGraphEdges()` - Create edges
+- `postAiGraphNodes()` - Create nodes
+- `deleteAiGraphEdgesById()` - Delete edges
+- `deleteAiGraphNodesById()` - Delete nodes
+
+## Ledger
+
+- `getLedger()` - List ledger
+- `getLedgerBy-accountByAccountId()` - Get by account
+- `getLedgerById()` - Get ledger
+
+## Legal acceptance
+
+- `getLegal-acceptances()` - List legal acceptances
+- `getLegal-acceptancesById()` - Get legal acceptances
+- `getLegal-acceptancesLatest()` - List latest
+
+## Legal document
+
+- `getLegal-documents()` - List legal documents
+- `getLegal-documentsBy-locale()` - List by locale
+- `getLegal-documentsById()` - Get legal documents
+- `getLegal-documentsFor-application()` - List for application
+- `postLegal-documents()` - Create legal documents
+- `patchLegal-documentsById()` - Update legal documents
+- `patchLegal-documentsByIdPublish()` - Update publish
+- `patchLegal-documentsByIdUnpublish()` - Update unpublish
+- `deleteLegal-documentsById()` - Delete legal documents
+
+## Messages
+
+- `getAiMessages()` - List messages
+- `getMessages()` - List messages
+- `getMessagesById()` - Get messages
+- `getMessagesSearch()` - List search
+- `getMessagesSemantic-search()` - List semantic search
+- `getThreadsByIdMessages()` - Get messages
+- `postAiMessages()` - Create messages
+- `postMessages()` - Create messages
+- `patchMessagesById()` - Update messages
+- `deleteAiMessagesById()` - Delete messages
+- `deleteMessagesById()` - Delete messages
+
+## Notification log
+
+- `getNotification-logs()` - List notification logs
+- `getNotification-logsById()` - Get notification logs
+- `getNotification-logsStats()` - List stats
+
+## Notification method
+
+- `getNotification-methods()` - List notification methods
+- `getNotification-methodsById()` - Get notification methods
+- `postNotification-methods()` - Create notification methods
+- `patchNotification-methodsById()` - Update notification methods
+- `patchNotification-methodsByIdSend-verification()` - Update send verification
+- `patchNotification-methodsByIdSet-primary()` - Update set primary
+- `patchNotification-methodsByIdVerify()` - Update verify
+- `deleteNotification-methodsById()` - Delete notification methods
+
+## Notification preference
+
+- `getNotification-preferences()` - List notification preferences
+- `getNotification-preferencesById()` - Get notification preferences
+- `postNotification-preferences()` - Create notification preferences
+- `patchNotification-preferencesById()` - Update notification preferences
+- `deleteNotification-preferencesById()` - Delete notification preferences
+
+## Operation success
+
+- `postDocumentsBulk-delete()` - Create bulk delete
+
+## Payment method
+
+- `getPayment-methods()` - List payment methods
+- `getPayment-methodsById()` - Get payment methods
+- `postPayment-methods()` - Create payment methods
+- `postPayment-methodsTokenize()` - Create tokenize
+- `patchPayment-methodsById()` - Update payment methods
+- `patchPayment-methodsByIdDefault()` - Update default
+- `deletePayment-methodsById()` - Delete payment methods
+
+## Permission
+
+- `getPermissions()` - List permissions
+- `getPermissionsPresets()` - List presets
+
+## Platform-pricing-config
+
+- `getPlatform-pricing-configs()` - List platform pricing configs
+- `getPlatform-pricing-configsById()` - Get platform pricing configs
+- `postPlatform-pricing-configs()` - Create platform pricing configs
+- `patchPlatform-pricing-configsById()` - Update platform pricing configs
+- `deletePlatform-pricing-configsById()` - Delete platform pricing configs
+
+## Presigned url
+
+- `postDocumentsPresigned-upload()` - Create presigned upload
+- `postStorageSign-download()` - Create sign download
+- `postStorageSign-upload()` - Create sign upload
+
+## Pricing rule
+
+- `getPricing-rules()` - List pricing rules
+- `getPricing-rulesById()` - Get pricing rules
+- `getPricing-rulesResolve()` - List resolve
+- `postPricing-rules()` - Create pricing rules
+- `patchPricing-rulesById()` - Update pricing rules
+
+## Pricing strategy
+
+- `getPricing-strategies()` - List pricing strategies
+- `getPricing-strategiesById()` - Get pricing strategies
+- `postPricing-strategies()` - Create pricing strategies
+- `patchPricing-strategiesById()` - Update pricing strategies
+
+## Role
+
+- `getRoles()` - List roles
+- `postRoles()` - Create roles
+- `patchRolesById()` - Update roles
+- `deleteRolesById()` - Delete roles
+
+## Schema discovery
+
+- `getExtractionSchema-discoveriesById()` - Get schema discoveries
+- `postExtractionSchema-discoveries()` - Create schema discoveries
+
+## Search
+
+- `getSearch()` - List search
+- `getSearchHealth()` - List health
+- `getSearchIndexes()` - List indexes
+- `getSearchSaved()` - List saved
+- `getSearchSemantic()` - List semantic
+- `getSearchStats()` - List stats
+- `getSearchStatus()` - List status
+- `getSearchSuggest()` - List suggest
+- `postAiSearch()` - Create search
+- `postAiSearchAdvanced()` - Create advanced
+- `postSearchBatch()` - Create batch
+- `postSearchReindex()` - Create reindex
+- `postSearchSaved()` - Create saved
+- `postSearchSavedByIdRun()` - Create run
+- `patchSearchSavedById()` - Update saved
+- `deleteSearchSavedById()` - Delete saved
+
+## Search analytics
+
+- `getSearchAnalytics()` - List analytics
+- `getSearchAnalyticsSummary()` - List summary
+
+## Semantic cache entry
+
+- `getSysSemantic-cacheById()` - Get semantic cache
+- `postSysSemantic-cacheClear()` - Create clear
+
+## Settlement
+
+- `getSettlements()` - List settlements
+- `getSettlementsById()` - Get settlements
+- `postSettlements()` - Create settlements
+
+## Storage
+
+- `getBuckets()` - List buckets
+- `getBucketsAll()` - List all
+- `getBucketsById()` - Get buckets
+- `getBucketsByIdObjects()` - Get objects
+- `getBucketsByIdStats()` - Get stats
+- `getObjects()` - List objects
+- `getObjectsById()` - Get objects
+- `postBuckets()` - Create buckets
+- `postObjectsBulk-destroy()` - Create bulk destroy
+- `postObjectsCopy()` - Create copy
+- `postObjectsMove()` - Create move
+- `postObjectsRegister()` - Create register
+- `patchBucketsById()` - Update buckets
+- `deleteBucketsById()` - Delete buckets
+- `deleteObjectsById()` - Delete objects
+
+## Storage stats
+
+- `getStorageStats()` - List stats
+- `getStorageStatsTenantByTenantId()` - Get tenant
+
+## System message
+
+- `getSystem-messages()` - List system messages
+- `getSystem-messagesById()` - Get system messages
+- `postSystem-messages()` - Create system messages
+- `patchSystem-messagesById()` - Update system messages
+- `patchSystem-messagesByIdPublish()` - Update publish
+- `patchSystem-messagesByIdUnpublish()` - Update unpublish
+- `deleteSystem-messagesById()` - Delete system messages
+
+## Tenant document stats
+
+- `getTenantsByTenantIdDocumentStats()` - Get document stats
+
+## Tenant pricing override
+
+- `getTenant-pricing-overrides()` - List tenant pricing overrides
+- `getTenant-pricing-overridesById()` - Get tenant pricing overrides
+- `postTenant-pricing-overrides()` - Create tenant pricing overrides
+- `patchTenant-pricing-overridesById()` - Update tenant pricing overrides
+- `deleteTenant-pricing-overridesById()` - Delete tenant pricing overrides
+
+## Tenant stats
+
+- `getTenantsByTenantIdStats()` - Get stats
+
+## Tenant-membership
+
+- `getTenant-memberships()` - List tenant memberships
+- `postTenant-memberships()` - Create tenant memberships
+- `patchTenant-membershipsByTenantIdByUserId()` - Update tenant memberships
+- `deleteTenant-membershipsByTenantIdByUserId()` - Delete tenant memberships
+
+## Tenants
+
+- `getTenants()` - List tenants
+- `getTenantsById()` - Get tenants
+- `postTenants()` - Create tenants
+- `postTenantsByIdBuy-storage()` - Create buy storage
+- `postTenantsByIdCredit()` - Create credit
+- `postTenantsByIdRemove-storage()` - Create remove storage
+- `postTenantsByIdSchedule-purge()` - Create schedule purge
+- `postTenantsIsv()` - Create isv
+- `patchTenantsById()` - Update tenants
+- `deleteTenantsById()` - Delete tenants
+
+## Thread stats
+
+- `getThreadsStats()` - List stats
+
+## Thread workspace stats
+
+- `getThreadsWorkspace-stats()` - List workspace stats
+
+## Threads
+
+- `getThreads()` - List threads
+- `getThreadsById()` - Get threads
+- `getThreadsSearch()` - List search
+- `postThreads()` - Create threads
+- `postThreadsActive()` - Create active
+- `postThreadsByIdExport()` - Create export
+- `postThreadsByIdFork()` - Create fork
+- `postThreadsByIdMessages()` - Create messages
+- `postThreadsByIdSummarize()` - Create summarize
+- `patchThreadsById()` - Update threads
+- `patchThreadsByIdArchive()` - Update archive
+- `patchThreadsByIdUnarchive()` - Update unarchive
+- `deleteThreadsById()` - Delete threads
+
+## Token
+
+- `postTokens()` - Create tokens
+
+## Training analytics
+
+- `getWorkspacesAnalytics-batch()` - List analytics batch
+- `getWorkspacesByWorkspaceIdTrainingAnalytics()` - Get analytics
+
+## Transaction
+
+- `getTransactions()` - List transactions
+- `getTransactionsById()` - Get transactions
+- `postPayments()` - Create payments
+
+## Transfer
+
+- `getTransfers()` - List transfers
+- `getTransfersById()` - Get transfers
+
+## Users
+
+- `getUser-profiles()` - List user profiles
+- `getUser-profilesById()` - Get user profiles
+- `getUser-profilesMe()` - List me
+- `getUsers()` - List users
+- `getUsersBy-email()` - List by email
+- `getUsersById()` - Get users
+- `getUsersMe()` - List me
+- `getUsersMeActivity()` - List activity
+- `getUsersMeDashboard()` - List dashboard
+- `getUsersMeStats()` - List stats
+- `getUsersMeTenants()` - List tenants
+- `postUser-profiles()` - Create user profiles
+- `postUsersAuthConfirm()` - Create confirm
+- `postUsersAuthLogin()` - Create login
+- `postUsersAuthMagic-linkLogin()` - Create login
+- `postUsersAuthMagic-linkRequest()` - Create request
+- `postUsersAuthRegister()` - Create register
+- `postUsersAuthRegister-with-oidc()` - Create register with oidc
+- `postUsersAuthResend-confirmation()` - Create resend confirmation
+- `postUsersRegister-isv()` - Create register isv
+- `patchUser-profilesById()` - Update user profiles
+- `patchUser-profilesByIdAccept-tos()` - Update accept tos
+- `patchUser-profilesByIdDismiss-announcement()` - Update dismiss announcement
+- `patchUser-profilesByIdDismiss-welcome()` - Update dismiss welcome
+- `patchUsersAuthPasswordChange()` - Update change
+- `patchUsersAuthReset-password()` - Update reset password
+- `patchUsersById()` - Update admin
+- `patchUsersByIdConfirm-email()` - Update confirm email
+- `patchUsersByIdEmail()` - Update email
+- `patchUsersByIdReset-password()` - Update reset password
+- `deleteUser-profilesById()` - Delete user profiles
+- `deleteUsersById()` - Delete users
+
+## Webhooks
+
+- `getWebhook-configs()` - List webhook configs
+- `getWebhook-configsById()` - Get webhook configs
+- `getWebhook-configsByIdEvents()` - Get events
+- `getWebhook-configsStats()` - List stats
+- `getWebhook-deliveries()` - List webhook deliveries
+- `getWebhook-deliveriesById()` - Get webhook deliveries
+- `getWebhook-deliveriesStats()` - List stats
+- `postWebhook-configs()` - Create webhook configs
+- `postWebhook-configsBulk-disable()` - Create bulk disable
+- `postWebhook-configsBulk-enable()` - Create bulk enable
+- `postWebhook-configsByIdReplay()` - Create replay
+- `postWebhook-configsByIdTest()` - Create test
+- `postWebhook-deliveriesBulk-retry()` - Create bulk retry
+- `postWebhook-deliveriesByIdRetry()` - Create retry
+- `patchWebhook-configsById()` - Update webhook configs
+- `patchWebhook-configsByIdRotate-secret()` - Update rotate secret
+- `deleteWebhook-configsById()` - Delete webhook configs
+
+## Wholesale-agreement
+
+- `getWholesale-agreements()` - List wholesale agreements
+- `getWholesale-agreementsById()` - Get wholesale agreements
+- `postWholesale-agreements()` - Create wholesale agreements
+- `patchWholesale-agreementsById()` - Update wholesale agreements
+
+## Workspace document stats
+
+- `getTenantsByTenantIdWorkspaceStats()` - Get workspace stats
+
+## Workspace-membership
+
+- `getWorkspace-memberships()` - List workspace memberships
+- `getWorkspace-membershipsInherited()` - List inherited
+- `getWorkspacesByIdMembers()` - Get members
+- `postWorkspace-memberships()` - Create workspace memberships
+- `patchWorkspace-membershipsByWorkspaceIdByUserId()` - Update workspace memberships
+- `deleteWorkspace-membershipsByWorkspaceIdByUserId()` - Delete workspace memberships
+
+## Workspaces
+
+- `getWorkspaces()` - List workspaces
+- `getWorkspacesById()` - Get workspaces
+- `getWorkspacesMine()` - List mine
+- `getWorkspacesShared()` - List shared
+- `postWorkspaces()` - Create workspaces
+- `patchWorkspacesById()` - Update workspaces
+- `patchWorkspacesByIdAllocate()` - Update allocate
+- `patchWorkspacesByIdPopulate-hashes()` - Update populate hashes
+- `patchWorkspacesByIdStorage-settings()` - Update storage settings
+- `deleteWorkspacesById()` - Delete workspaces
+
+## Error Handling
+
+All functions return a Promise that resolves with `{ data, error, response }`.
+
+```typescript
+const { data, error } = await getAgents();
+if (error) {
+  console.error(error.status, error.detail);
+} else {
+  console.log(data);
+}
+```
+
+## Types
+
+All types are exported:
+
+```typescript
+import type { Agent, Workspace, Document } from '@gpt-core/admin';
+```
