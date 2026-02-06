@@ -1,0 +1,40 @@
+meta {
+  name: Create ai config
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/sys/ai-config
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "cloud_model": null,
+        "embedding_model": null,
+        "id": "string",
+        "model_overrides": null,
+        "vector_dimensions": null
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - System admin token
+**Rate Limit:** No limit (system admin)
+
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Create analyze training
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/agents/{id}/analyze-training
+  body: none
+  auth: inherit
+}
+
+docs {
+  Analyze training examples for conflicts, coverage, and quality
+}

@@ -1,0 +1,23 @@
+meta {
+  name: Get by status
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/extraction/documents/workspace/{workspace_id}/by-status/{status}
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~page: 
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Filter documents by workspace_id and processing status
+}

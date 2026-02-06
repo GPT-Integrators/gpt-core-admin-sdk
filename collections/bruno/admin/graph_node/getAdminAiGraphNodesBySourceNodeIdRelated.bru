@@ -1,0 +1,27 @@
+meta {
+  name: Get related
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/ai/graph/nodes/{source_node_id}/related
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+  ~relationship_type: 
+}
+
+docs {
+  Retrieves a single resource by ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

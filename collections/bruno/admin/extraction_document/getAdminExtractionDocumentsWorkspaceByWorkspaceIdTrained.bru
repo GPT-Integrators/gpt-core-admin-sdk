@@ -1,0 +1,26 @@
+meta {
+  name: Get trained
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/extraction/documents/workspace/{workspace_id}/trained
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~page: 
+  ~include: 
+  ~fields: 
+  ~limit: 
+  ~agent_version_id: 
+  ~version_mode: 
+}
+
+docs {
+  List documents that have been trained and not dismissed
+}

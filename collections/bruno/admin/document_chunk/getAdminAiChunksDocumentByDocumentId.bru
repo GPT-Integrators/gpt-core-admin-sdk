@@ -1,0 +1,26 @@
+meta {
+  name: Get document
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/ai/chunks/document/{document_id}
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Retrieves a single resource by ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

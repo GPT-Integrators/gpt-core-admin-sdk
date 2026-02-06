@@ -1,0 +1,36 @@
+meta {
+  name: Create login
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/users/auth/magic-link/login
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "token": "string"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Not required (public endpoint)
+**Rate Limit:** 20 requests per minute
+
+}

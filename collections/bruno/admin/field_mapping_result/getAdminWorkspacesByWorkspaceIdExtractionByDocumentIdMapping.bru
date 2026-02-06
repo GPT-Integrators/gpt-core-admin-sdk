@@ -1,0 +1,25 @@
+meta {
+  name: Get mapping
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/workspaces/{workspace_id}/extraction/{document_id}/mapping
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+  ~semantic_enabled: 
+}
+
+docs {
+  Retrieves a single resource by ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

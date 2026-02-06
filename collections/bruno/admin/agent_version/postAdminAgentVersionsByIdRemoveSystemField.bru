@@ -1,0 +1,23 @@
+meta {
+  name: Create remove system field
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/agent-versions/{id}/remove-system-field
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "data": {
+      "system_field_name": "string"
+    }
+  }
+}
+
+docs {
+  Remove a system field from this version's schema
+}

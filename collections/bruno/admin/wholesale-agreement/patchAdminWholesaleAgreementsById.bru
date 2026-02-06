@@ -1,0 +1,45 @@
+meta {
+  name: Update wholesale agreements
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/wholesale-agreements/{id}
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "effective_date": null,
+        "hold_days": null,
+        "minimum_payout_cents": null,
+        "minimum_retail_floors": null,
+        "model": null,
+        "notes": null,
+        "rates": null,
+        "settlement_frequency": null,
+        "take_rate_percent": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Updates specific fields of an existing resource.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

@@ -1,0 +1,25 @@
+meta {
+  name: List search
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/threads/search
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+  query: 
+}
+
+docs {
+  Lists resources with optional filtering, sorting, and pagination.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

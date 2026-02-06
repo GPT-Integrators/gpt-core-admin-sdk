@@ -1,0 +1,50 @@
+meta {
+  name: Create llm analytics
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/llm_analytics
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "agent_id": null,
+        "confidence_score": null,
+        "cost_usd": null,
+        "input_tokens": null,
+        "latency_ms": null,
+        "metadata": null,
+        "model": "string",
+        "output_tokens": null,
+        "provider": null,
+        "task": null,
+        "tenant_id": null,
+        "total_tokens": null,
+        "user_id": null,
+        "wholesale_cost_usd": null,
+        "workspace_id": null
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

@@ -1,0 +1,26 @@
+meta {
+  name: List summary
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/llm_analytics/summary
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+  ~start_date: 
+  ~end_date: 
+}
+
+docs {
+  Lists resources with optional filtering, sorting, and pagination.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

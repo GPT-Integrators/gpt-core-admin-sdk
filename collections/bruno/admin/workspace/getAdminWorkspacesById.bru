@@ -1,0 +1,25 @@
+meta {
+  name: Get workspaces
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/workspaces/{id}
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+  ~include_archived: 
+}
+
+docs {
+  Retrieves a single resource by ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

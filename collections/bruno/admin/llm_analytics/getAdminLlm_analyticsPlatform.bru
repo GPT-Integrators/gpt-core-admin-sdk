@@ -1,0 +1,20 @@
+meta {
+  name: List platform
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/llm_analytics/platform
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Platform-wide analytics summary (platform admin only)
+}

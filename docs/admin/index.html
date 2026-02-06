@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPT Core Admin API - GPT Core</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .header .logo {
+      font-size: 1.25rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #8b5cf6, #a5b4fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header .divider {
+      color: #64748b;
+    }
+
+    .header .api-name {
+      color: #e2e8f0;
+    }
+
+    .header-right {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .header-right a {
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      transition: background 0.2s;
+    }
+
+    .header-right a:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .header-right .primary {
+      background: #8b5cf6;
+    }
+
+    .header-right .primary:hover {
+      opacity: 0.9;
+    }
+
+    #api-reference {
+      height: calc(100vh - 60px);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-left">
+      <a href="../" class="logo">GPT Core</a>
+      <span class="divider">/</span>
+      <span class="api-name">GPT Core Admin API</span>
+    </div>
+    <div class="header-right">
+      <a href="../oas/openapi_admin.json">OpenAPI Spec</a>
+      <a href="../../ts/packages/admin/llms.txt">llms.txt</a>
+      <a href="https://www.npmjs.com/package/@gpt-core/admin" class="primary">npm Package</a>
+    </div>
+  </div>
+
+  <div id="api-reference" data-url="../oas/openapi_admin.json" data-configuration='{"theme":"default","darkMode":true,"hideDarkModeToggle":false,"layout":"modern","searchHotKey":"k"}'></div>
+  <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+meta {
+  name: Update isv settlements
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/isv-settlements/{id}
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "gross_revenue": null,
+        "net_revenue": null,
+        "platform_fee": null,
+        "settled_at": null,
+        "settlement_status": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Updates specific fields of an existing resource.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

@@ -1,0 +1,24 @@
+meta {
+  name: Get users
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/users/{id}
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Retrieves a single resource by ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

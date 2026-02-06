@@ -1,0 +1,23 @@
+meta {
+  name: Create replay
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/webhook-configs/{id}/replay
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "data": {
+      "date_range": null
+    }
+  }
+}
+
+docs {
+  Replay historical events to this webhook
+}

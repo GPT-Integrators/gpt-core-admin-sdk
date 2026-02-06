@@ -1,0 +1,24 @@
+meta {
+  name: List costs
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/llm_analytics/costs
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Lists resources with optional filtering, sorting, and pagination.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

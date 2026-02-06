@@ -1,0 +1,22 @@
+meta {
+  name: Get upload urls
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/extraction/batches/{id}/upload-urls
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+  ~file_count: 
+  ~filenames: 
+}
+
+docs {
+  Generate presigned URLs for batch document upload
+}

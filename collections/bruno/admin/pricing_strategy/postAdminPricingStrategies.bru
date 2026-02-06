@@ -1,0 +1,43 @@
+meta {
+  name: Create pricing strategies
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/pricing-strategies
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "application_id": null,
+        "floor_price": {
+          "amount": "100.00",
+          "currency": "USD"
+        },
+        "margin_percent": null,
+        "metric": "string",
+        "service_id": "string"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

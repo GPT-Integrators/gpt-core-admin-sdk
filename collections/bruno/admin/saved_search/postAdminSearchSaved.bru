@@ -1,0 +1,40 @@
+meta {
+  name: Create saved
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/search/saved
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "filters": null,
+        "is_shared": null,
+        "name": "string",
+        "query": "string",
+        "search_type": null
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

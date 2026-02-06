@@ -1,0 +1,26 @@
+meta {
+  name: Get review queue
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/extraction/documents/workspace/{workspace_id}/review-queue
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~page: 
+  ~include: 
+  ~fields: 
+  ~limit: 
+  ~agent_version_id: 
+  ~version_mode: 
+}
+
+docs {
+  Get prioritized review queue for active learning
+}

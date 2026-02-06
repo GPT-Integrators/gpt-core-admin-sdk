@@ -1,0 +1,15 @@
+meta {
+  name: Delete training examples
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{baseUrl}}/admin/agents/{id}/training-examples/{example_id}
+  body: none
+  auth: inherit
+}
+
+docs {
+  Delete a training example belonging to this agent
+}

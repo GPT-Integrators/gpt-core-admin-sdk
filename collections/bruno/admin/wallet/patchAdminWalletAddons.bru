@@ -1,0 +1,34 @@
+meta {
+  name: Update addons
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/wallet/addons
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "addon_slug": "string",
+        "quantity": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Purchase an add-on for the wallet
+}

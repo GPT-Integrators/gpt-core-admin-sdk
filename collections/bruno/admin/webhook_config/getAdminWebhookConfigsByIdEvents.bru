@@ -1,0 +1,15 @@
+meta {
+  name: Get events
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/webhook-configs/{id}/events
+  body: none
+  auth: inherit
+}
+
+docs {
+  List available events that can be subscribed to
+}

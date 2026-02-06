@@ -1,0 +1,33 @@
+meta {
+  name: Create agent test results
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/agent-test-results
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "agent_version_id": "00000000-0000-0000-0000-000000000000",
+        "document_id": "00000000-0000-0000-0000-000000000000"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Run an agent version against a document and return the test result
+}

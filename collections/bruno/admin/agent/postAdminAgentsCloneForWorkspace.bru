@@ -1,0 +1,34 @@
+meta {
+  name: Create clone for workspace
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/agents/clone-for-workspace
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "base_agent_id": "00000000-0000-0000-0000-000000000000",
+        "customize": null,
+        "workspace_id": "00000000-0000-0000-0000-000000000000"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Clone a system agent for workspace-specific customization
+}

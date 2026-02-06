@@ -1,0 +1,19 @@
+meta {
+  name: List dashboard
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/users/me/dashboard
+  body: none
+  auth: inherit
+}
+
+query {
+  ~tenant_id: 
+}
+
+docs {
+  Get dashboard data for the user's tenant context
+}

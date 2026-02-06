@@ -1,0 +1,22 @@
+meta {
+  name: List usage
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/agents/usage
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Batch read usage for all accessible agents
+}

@@ -1,0 +1,21 @@
+meta {
+  name: List usage breakdown
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/wallet/usage-breakdown
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+  ~tenant_id: 
+}
+
+docs {
+  Get usage breakdown by workspace
+}

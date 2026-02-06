@@ -1,0 +1,38 @@
+meta {
+  name: Create isv
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/tenants/isv
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "badge_url": null,
+        "initial_credits": null,
+        "kind": null,
+        "logo_url": null,
+        "name": "string",
+        "owner_id": "00000000-0000-0000-0000-000000000000",
+        "slug": "string"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Create an ISV tenant with initial credits
+}

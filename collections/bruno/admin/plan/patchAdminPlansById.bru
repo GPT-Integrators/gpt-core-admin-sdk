@@ -1,0 +1,46 @@
+meta {
+  name: Update plans
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/plans/{id}
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "billing_interval": null,
+        "initial_credits": null,
+        "is_addon": null,
+        "max_renewals": null,
+        "monthly_credits": null,
+        "monthly_price": null,
+        "name": null,
+        "storage_blocks": null,
+        "storage_days": null,
+        "type": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Updates specific fields of an existing resource.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

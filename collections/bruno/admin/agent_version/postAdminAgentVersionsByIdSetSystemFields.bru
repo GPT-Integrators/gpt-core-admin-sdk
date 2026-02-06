@@ -1,0 +1,25 @@
+meta {
+  name: Create set system fields
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/agent-versions/{id}/set-system-fields
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "data": {
+      "system_field_names": [
+        "string"
+      ]
+    }
+  }
+}
+
+docs {
+  Set which system fields are included in this version's schema (batch operation)
+}

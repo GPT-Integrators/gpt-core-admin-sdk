@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPT Core Admin SDK</title>
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  header {
+    padding: 80px 0 60px;
+    text-align: center;
+    color: white;
+  }
+  header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  header p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .badges {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .badges a {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .badges a:hover { background: rgba(255,255,255,0.2); }
+  main { padding: 60px 0; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-bottom: 60px;
+  }
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  .card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    color: #1a1a2e;
+  }
+  .card p { color: #666; margin-bottom: 20px; }
+  .card code {
+    display: block;
+    background: #f5f5f5;
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    margin: 16px 0;
+  }
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #4F46E5;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .btn:hover { background: #4338ca; }
+  .btn-secondary {
+    background: transparent;
+    border: 2px solid #4F46E5;
+    color: #4F46E5;
+  }
+  .btn-secondary:hover {
+    background: #4F46E5;
+    color: white;
+  }
+  .tooling {
+    background: white;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  .tooling h2 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    color: #1a1a2e;
+  }
+  .tooling-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .tool-card {
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    text-align: center;
+  }
+  .tool-card:hover { border-color: #4F46E5; }
+  .tool-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  .tool-card a {
+    color: #4F46E5;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .tool-card a:hover { text-decoration: underline; }
+  footer {
+    text-align: center;
+    padding: 40px 0;
+    color: rgba(255,255,255,0.7);
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>GPT Core Admin SDK</h1>
+      <p>TypeScript Admin SDK for GPT Core Platform — Tenant management, billing, and platform administration.</p>
+      <div class="badges">
+        <a href="https://www.npmjs.com/package/@gpt-core/admin">
+          <img src="https://badge.fury.io/js/%40gpt-core%2Fadmin.svg" alt="npm version">
+        </a>
+        <a href="https://github.com/GPT-Integrators/gpt-core-admin-sdk">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <div class="card">
+        <h2>Quick Start</h2>
+        <p>Install via npm and start making requests in seconds.</p>
+        <code>npm install @gpt-core/admin</code>
+        <a href="/quickstart" class="btn">Get Started</a>
+      </div>
+
+      <div class="card">
+        <h2>API Documentation</h2>
+        <p>Interactive API reference with Try It support for all endpoints.</p>
+        <a href="/docs/admin" class="btn">View Docs</a>
+      </div>
+
+      <div class="card">
+        <h2>Features</h2>
+        <p>Tenant management, billing, user administration, and full TypeScript support.</p>
+        <a href="https://github.com/GPT-Integrators/gpt-core-admin-sdk#features" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+
+    <div class="tooling">
+      <h2>API Collections</h2>
+      <p style="margin-bottom: 20px; color: #666;">Download API collections for your preferred HTTP client:</p>
+      <div class="tooling-grid">
+        <div class="tool-card">
+          <h3>Postman</h3>
+          <a href="/collections/postman/gpt-core-admin.postman_collection.json">Download Collection</a>
+        </div>
+        <div class="tool-card">
+          <h3>Bruno</h3>
+          <a href="/collections/bruno/admin/">Browse Folder</a>
+        </div>
+        <div class="tool-card">
+          <h3>Insomnia</h3>
+          <a href="/collections/insomnia/gpt-core-admin.insomnia.json">Download Collection</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 GPT Integrators. All rights reserved.</p>
+      <p style="margin-top: 8px;">
+        <a href="https://gptplatform.com" style="color: rgba(255,255,255,0.7); text-decoration: none;">gptplatform.com</a>
+        &middot; <a href="https://status.gptplatform.com" style="color: rgba(255,255,255,0.7); text-decoration: none;">Status</a>
+        &middot; <a href="mailto:support@gptplatform.com" style="color: rgba(255,255,255,0.7); text-decoration: none;">Support</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

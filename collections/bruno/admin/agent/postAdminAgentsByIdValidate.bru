@@ -1,0 +1,32 @@
+meta {
+  name: Create validate
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/agents/{id}/validate
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "sample_output": {}
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Validate sample output against agent schema
+}

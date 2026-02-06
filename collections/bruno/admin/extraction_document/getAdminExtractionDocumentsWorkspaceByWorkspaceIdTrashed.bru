@@ -1,0 +1,24 @@
+meta {
+  name: Get trashed
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/extraction/documents/workspace/{workspace_id}/trashed
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~page: 
+  ~include: 
+  ~fields: 
+  ~limit: 
+}
+
+docs {
+  List soft-deleted (trashed) documents
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Create activate
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/agents/{id}/schema-versions/{version_id}/activate
+  body: none
+  auth: inherit
+}
+
+docs {
+  Activate a specific schema version
+}

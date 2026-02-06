@@ -1,0 +1,58 @@
+meta {
+  name: Update status
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/extraction/documents/{id}/status
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "agent_id": null,
+        "agent_version_id": null,
+        "avg_confidence": null,
+        "billed_credits": null,
+        "char_count": null,
+        "classification_confidence": null,
+        "completed_at": null,
+        "document_type": null,
+        "domain": null,
+        "error_message": null,
+        "image_height": null,
+        "image_width": null,
+        "line_count": null,
+        "municipality": null,
+        "pages": null,
+        "processed_at": null,
+        "progress": null,
+        "schema_revision": null,
+        "state": null,
+        "status": null,
+        "training_metadata": null,
+        "word_count": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Updates specific fields of an existing resource.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

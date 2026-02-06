@@ -1,0 +1,20 @@
+meta {
+  name: List me
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/user-profiles/me
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Get the current user's profile
+}

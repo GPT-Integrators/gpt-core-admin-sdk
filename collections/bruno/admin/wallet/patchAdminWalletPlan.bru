@@ -1,0 +1,34 @@
+meta {
+  name: Update plan
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/wallet/plan
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "plan_id": null,
+        "plan_slug": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Change the main plan for the wallet
+}

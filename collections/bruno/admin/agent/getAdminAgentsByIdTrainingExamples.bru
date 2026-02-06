@@ -1,0 +1,15 @@
+meta {
+  name: Get training examples
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/agents/{id}/training-examples
+  body: none
+  auth: inherit
+}
+
+docs {
+  List training examples for this agent
+}

@@ -1,0 +1,27 @@
+meta {
+  name: List isv settlements
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/isv-settlements
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~page: 
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Lists resources with optional filtering, sorting, and pagination.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

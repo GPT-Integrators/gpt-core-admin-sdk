@@ -1,0 +1,15 @@
+meta {
+  name: List stats
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/notification-logs/stats
+  body: none
+  auth: inherit
+}
+
+docs {
+  Get notification log statistics
+}

@@ -1,0 +1,22 @@
+meta {
+  name: List shared
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/workspaces/shared
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Workspaces where user has membership but NOT tenant membership (shared from external orgs)
+}

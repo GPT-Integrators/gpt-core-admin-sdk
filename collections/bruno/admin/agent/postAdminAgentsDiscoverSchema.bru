@@ -1,0 +1,26 @@
+meta {
+  name: Create discover schema
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/agents/discover-schema
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "data": {
+      "advanced_mode": null,
+      "document_id": "00000000-0000-0000-0000-000000000000",
+      "suggested_name": null,
+      "workspace_id": "00000000-0000-0000-0000-000000000000"
+    }
+  }
+}
+
+docs {
+  Initiate schema discovery without an existing agent. Used for bootstrapping new agents from documents.
+}

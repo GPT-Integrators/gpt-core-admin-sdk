@@ -1,0 +1,28 @@
+meta {
+  name: List by locale
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/legal-documents/by-locale
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+  locale: 
+  ~region: 
+}
+
+docs {
+  Lists resources with optional filtering, sorting, and pagination.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

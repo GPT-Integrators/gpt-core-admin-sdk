@@ -1,0 +1,47 @@
+meta {
+  name: Update subscriptions
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/subscriptions/{id}
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "billing_interval": null,
+        "current_period_end": null,
+        "is_addon": null,
+        "monthly_credits": null,
+        "monthly_price": null,
+        "pending_plan_id": null,
+        "plan_id": null,
+        "quantity": null,
+        "status": null,
+        "storage_days": null,
+        "type": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Updates specific fields of an existing resource.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

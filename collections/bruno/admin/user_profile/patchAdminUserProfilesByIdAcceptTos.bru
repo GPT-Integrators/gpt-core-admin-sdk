@@ -1,0 +1,33 @@
+meta {
+  name: Update accept tos
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/user-profiles/{id}/accept-tos
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "version": "string"
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Accept Terms of Service - merges with existing preferences
+}

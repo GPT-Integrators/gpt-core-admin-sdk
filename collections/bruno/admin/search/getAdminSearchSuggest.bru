@@ -1,0 +1,28 @@
+meta {
+  name: List suggest
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/search/suggest
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+  query: 
+  ~limit: 
+}
+
+docs {
+  Lists resources with optional filtering, sorting, and pagination.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

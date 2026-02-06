@@ -1,0 +1,31 @@
+meta {
+  name: List training examples
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/training-examples
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~page: 
+  ~include: 
+  ~fields: 
+  ~agent_id: 
+  ~field_name: 
+  ~document_type: 
+  ~inserted_at_gte: 
+  ~inserted_at_lte: 
+  ~version_id: 
+  ~version_ids: 
+  ~version_mode: 
+}
+
+docs {
+  List training examples with filtering support
+}

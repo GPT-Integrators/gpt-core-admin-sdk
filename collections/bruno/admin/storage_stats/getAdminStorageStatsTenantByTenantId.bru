@@ -1,0 +1,15 @@
+meta {
+  name: Get tenant
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/storage/stats/tenant/{tenant_id}
+  body: none
+  auth: inherit
+}
+
+docs {
+  Get storage stats for a specific tenant
+}

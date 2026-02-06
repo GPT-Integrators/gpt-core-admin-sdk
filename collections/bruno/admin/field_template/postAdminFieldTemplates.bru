@@ -1,0 +1,42 @@
+meta {
+  name: Create field templates
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/field-templates
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "category": "string",
+        "extraction_hints": null,
+        "field_type": null,
+        "is_system": null,
+        "llm_instructions": null,
+        "name": "string",
+        "validation_pattern": null
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

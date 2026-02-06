@@ -1,0 +1,39 @@
+meta {
+  name: Create mapping
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/workspaces/{workspace_id}/extraction/{document_id}/mapping
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "add_to_schema": null,
+        "confirmed": null,
+        "ignored_fields": null,
+        "mappings": null
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

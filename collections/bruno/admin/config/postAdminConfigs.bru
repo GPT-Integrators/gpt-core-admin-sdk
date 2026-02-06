@@ -1,0 +1,38 @@
+meta {
+  name: Create configs
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/configs
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "description": null,
+        "key": "string",
+        "value": "string"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

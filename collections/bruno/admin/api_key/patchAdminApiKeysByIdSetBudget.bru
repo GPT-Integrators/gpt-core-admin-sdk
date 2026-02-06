@@ -1,0 +1,34 @@
+meta {
+  name: Update set budget
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/api-keys/{id}/set-budget
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "credit_limit": null,
+        "credit_limit_period": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Set or remove credit budget for this API key
+}

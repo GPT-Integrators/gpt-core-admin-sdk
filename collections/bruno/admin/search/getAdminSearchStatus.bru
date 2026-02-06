@@ -1,0 +1,26 @@
+meta {
+  name: List status
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/search/status
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Lists resources with optional filtering, sorting, and pagination.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

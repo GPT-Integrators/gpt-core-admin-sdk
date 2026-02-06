@@ -1,0 +1,35 @@
+meta {
+  name: Update credits
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/wallet/credits
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "package_id": null,
+        "package_slug": null,
+        "payment_method_id": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Purchase credits (Top-up)
+}

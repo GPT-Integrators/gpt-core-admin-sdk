@@ -1,0 +1,26 @@
+meta {
+  name: List resolve
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/pricing-rules/resolve
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+  service: 
+  ~group_id: 
+}
+
+docs {
+  Lists resources with optional filtering, sorting, and pagination.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

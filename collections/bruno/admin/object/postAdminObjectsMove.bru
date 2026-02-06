@@ -1,0 +1,25 @@
+meta {
+  name: Create move
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/objects/move
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "data": {
+      "destination_bucket_id": "00000000-0000-0000-0000-000000000000",
+      "id": "00000000-0000-0000-0000-000000000000",
+      "new_key": null
+    }
+  }
+}
+
+docs {
+  Move an object to a different bucket
+}

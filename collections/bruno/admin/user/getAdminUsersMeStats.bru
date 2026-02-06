@@ -1,0 +1,19 @@
+meta {
+  name: List stats
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/users/me/stats
+  body: none
+  auth: inherit
+}
+
+query {
+  ~tenant_id: 
+}
+
+docs {
+  Get stats for the user's tenant context
+}

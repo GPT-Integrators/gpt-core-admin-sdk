@@ -1,0 +1,23 @@
+meta {
+  name: List analytics batch
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/workspaces/analytics-batch
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+  workspace_ids: 
+}
+
+docs {
+  Get training analytics for multiple workspaces in a single request (max 50)
+}

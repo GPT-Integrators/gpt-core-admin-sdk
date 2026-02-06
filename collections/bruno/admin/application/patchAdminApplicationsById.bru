@@ -1,0 +1,49 @@
+meta {
+  name: Update applications
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/applications/{id}
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "badge_url": null,
+        "base_url": null,
+        "default_free_credits": null,
+        "description": null,
+        "invite_only": null,
+        "logo_url": null,
+        "name": null,
+        "oauth": null,
+        "require_email_verification": null,
+        "sender_email": null,
+        "sender_name": null,
+        "slug": null,
+        "vanity_slug": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Updates specific fields of an existing resource.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

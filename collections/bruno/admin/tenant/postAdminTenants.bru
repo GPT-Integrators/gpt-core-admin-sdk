@@ -1,0 +1,47 @@
+meta {
+  name: Create tenants
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/tenants
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "application_id": null,
+        "badge_url": null,
+        "is_personal": null,
+        "kind": null,
+        "logo_url": null,
+        "name": "string",
+        "owner_id": "00000000-0000-0000-0000-000000000000",
+        "parent_id": null,
+        "plan_tier": null,
+        "slug": "string",
+        "training_price_credits": null,
+        "vanity_slug": null
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

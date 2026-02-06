@@ -1,0 +1,49 @@
+meta {
+  name: Create isv revenue
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/isv-revenue
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "amount": {
+          "amount": "100.00",
+          "currency": "USD"
+        },
+        "application_id": null,
+        "description": "string",
+        "isv_id": "00000000-0000-0000-0000-000000000000",
+        "metadata": null,
+        "pass_through_cost": null,
+        "platform_markup": null,
+        "qorpay_transaction_id": null,
+        "subscription_id": null,
+        "tenant_id": null,
+        "type": "subscription_revenue"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

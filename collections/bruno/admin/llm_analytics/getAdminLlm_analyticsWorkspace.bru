@@ -1,0 +1,25 @@
+meta {
+  name: List workspace
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/llm_analytics/workspace
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+  ~workspace_id: 
+}
+
+docs {
+  Lists resources with optional filtering, sorting, and pagination.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

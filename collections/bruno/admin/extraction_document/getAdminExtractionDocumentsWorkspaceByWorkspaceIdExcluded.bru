@@ -1,0 +1,26 @@
+meta {
+  name: Get excluded
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/extraction/documents/workspace/{workspace_id}/excluded
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~page: 
+  ~include: 
+  ~fields: 
+  ~limit: 
+  ~agent_version_id: 
+  ~version_mode: 
+}
+
+docs {
+  List excluded documents
+}

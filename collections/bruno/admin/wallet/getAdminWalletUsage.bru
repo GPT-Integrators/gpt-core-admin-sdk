@@ -1,0 +1,21 @@
+meta {
+  name: List usage
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/wallet/usage
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+  ~tenant_id: 
+}
+
+docs {
+  Get daily credit usage history
+}

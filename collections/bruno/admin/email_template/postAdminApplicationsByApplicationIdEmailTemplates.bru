@@ -1,0 +1,41 @@
+meta {
+  name: Create email templates
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/applications/{application_id}/email-templates
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "body_markdown": "string",
+        "enabled": null,
+        "name": "string",
+        "primary_color": null,
+        "slug": "string",
+        "subject": "string"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

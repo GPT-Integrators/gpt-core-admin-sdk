@@ -1,0 +1,36 @@
+meta {
+  name: Create request
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/users/auth/magic-link/request
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "email": "string"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 20 requests per minute
+
+}

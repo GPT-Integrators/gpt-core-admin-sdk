@@ -1,0 +1,22 @@
+meta {
+  name: List all
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/buckets/all
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Read all buckets including system/processing buckets
+}

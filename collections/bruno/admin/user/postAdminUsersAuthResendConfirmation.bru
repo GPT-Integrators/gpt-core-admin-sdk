@@ -1,0 +1,32 @@
+meta {
+  name: Create resend confirmation
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/users/auth/resend-confirmation
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "email": "string"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Resend confirmation email to an unconfirmed user
+}

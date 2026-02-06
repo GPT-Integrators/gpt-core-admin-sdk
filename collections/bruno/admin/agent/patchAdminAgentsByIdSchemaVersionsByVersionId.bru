@@ -1,0 +1,26 @@
+meta {
+  name: Update schema versions
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/agents/{id}/schema-versions/{version_id}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "data": {
+      "changes_summary": null,
+      "fields": null,
+      "prompt_template": null,
+      "schema_definition": null
+    }
+  }
+}
+
+docs {
+  Update a schema version without creating a new version
+}

@@ -1,0 +1,42 @@
+meta {
+  name: Create agent versions
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/agent-versions
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "agent_id": "00000000-0000-0000-0000-000000000000",
+        "changes_summary": null,
+        "fields": null,
+        "parent_version_id": null,
+        "prompt_template": "string",
+        "schema_definition": null,
+        "version_number": "string"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

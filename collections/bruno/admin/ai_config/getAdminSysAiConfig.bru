@@ -1,0 +1,27 @@
+meta {
+  name: List ai config
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/sys/ai-config
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~page: 
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Lists resources with optional filtering, sorting, and pagination.
+
+**Authentication:** Required - System admin token
+**Rate Limit:** No limit (system admin)
+
+}

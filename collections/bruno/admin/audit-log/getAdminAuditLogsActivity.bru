@@ -1,0 +1,31 @@
+meta {
+  name: List activity
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/audit-logs/activity
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+  tenant_id: 
+  ~workspace_id: 
+  ~activity_type: 
+  ~limit: 
+  ~offset: 
+}
+
+docs {
+  Lists resources with optional filtering, sorting, and pagination.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

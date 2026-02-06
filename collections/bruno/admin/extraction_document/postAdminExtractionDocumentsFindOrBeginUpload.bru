@@ -1,0 +1,40 @@
+meta {
+  name: Create find or begin upload
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/extraction/documents/find-or-begin-upload
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "batch_id": null,
+        "content_type": null,
+        "file_hash": null,
+        "file_size_bytes": null,
+        "file_type": "string",
+        "filename": "string",
+        "force": null,
+        "parent_document_id": null,
+        "workspace_id": "00000000-0000-0000-0000-000000000000"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Dedup-aware upload: returns existing document if file_hash matches, otherwise creates new document
+}

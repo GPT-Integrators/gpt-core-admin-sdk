@@ -1,0 +1,32 @@
+meta {
+  name: Create fork
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/threads/{id}/fork
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "title": null
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Fork a thread by cloning it with all its messages
+}

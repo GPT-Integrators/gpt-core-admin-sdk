@@ -1,0 +1,44 @@
+meta {
+  name: Create settlements
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/settlements
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "application_id": "00000000-0000-0000-0000-000000000000",
+        "breakdown": null,
+        "isv_id": "00000000-0000-0000-0000-000000000000",
+        "net_settlement_usd": null,
+        "period_end": null,
+        "period_start": null,
+        "retail_revenue_usd": null,
+        "status": null,
+        "wholesale_cost_usd": null
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

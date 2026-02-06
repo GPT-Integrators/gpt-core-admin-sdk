@@ -1,0 +1,23 @@
+meta {
+  name: List analytics
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/search/analytics
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~page: 
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  List search analytics with tenant-based filtering
+}

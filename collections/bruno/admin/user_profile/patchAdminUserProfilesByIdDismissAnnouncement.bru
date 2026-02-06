@@ -1,0 +1,31 @@
+meta {
+  name: Update dismiss announcement
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/user-profiles/{id}/dismiss-announcement
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {},
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Dismiss announcement - merges with existing preferences
+}

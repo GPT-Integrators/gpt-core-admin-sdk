@@ -1,0 +1,19 @@
+meta {
+  name: List stats
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/webhook-deliveries/stats
+  body: none
+  auth: inherit
+}
+
+docs {
+  Lists resources with optional filtering, sorting, and pagination.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

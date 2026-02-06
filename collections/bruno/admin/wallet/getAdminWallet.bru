@@ -1,0 +1,20 @@
+meta {
+  name: List wallet
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/wallet
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Reads the wallet for the current tenant
+}

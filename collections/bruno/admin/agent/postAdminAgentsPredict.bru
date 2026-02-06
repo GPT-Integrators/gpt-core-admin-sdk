@@ -1,0 +1,26 @@
+meta {
+  name: Create predict
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/agents/predict
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "data": {
+      "description": null,
+      "document_id": null,
+      "file_content": null,
+      "name": null
+    }
+  }
+}
+
+docs {
+  Predicts the best agents for a given input
+}

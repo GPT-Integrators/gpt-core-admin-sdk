@@ -1,0 +1,38 @@
+meta {
+  name: Update accept
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/invitations/{id}/accept
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "application_id": null,
+        "token": "string"
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Updates specific fields of an existing resource.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

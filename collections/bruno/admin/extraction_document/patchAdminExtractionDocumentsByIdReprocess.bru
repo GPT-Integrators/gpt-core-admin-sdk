@@ -1,0 +1,34 @@
+meta {
+  name: Update reprocess
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/extraction/documents/{id}/reprocess
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "schema_version": null,
+        "schema_version_id": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Re-extract document with current or specified schema version
+}

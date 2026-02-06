@@ -1,0 +1,32 @@
+meta {
+  name: Create accept by token
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/invitations/accept-by-token
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "token": "string"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Accept an invitation using only the token
+}

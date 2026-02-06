@@ -1,0 +1,37 @@
+meta {
+  name: Create register with oidc
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/users/auth/register-with-oidc
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "oauth_tokens": {},
+        "user_info": {}
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Not required (public endpoint)
+**Rate Limit:** 20 requests per minute
+
+}

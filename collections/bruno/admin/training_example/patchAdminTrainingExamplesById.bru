@@ -1,0 +1,40 @@
+meta {
+  name: Update training examples
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/training-examples/{id}
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "correction_reasons": null,
+        "input_text": null,
+        "output_json": null,
+        "training_note": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Updates specific fields of an existing resource.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

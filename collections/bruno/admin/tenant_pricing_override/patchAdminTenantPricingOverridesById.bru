@@ -1,0 +1,40 @@
+meta {
+  name: Update tenant pricing overrides
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/tenant-pricing-overrides/{id}
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "expires_at": null,
+        "floor_price": null,
+        "margin_percent": null,
+        "reason": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Updates specific fields of an existing resource.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

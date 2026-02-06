@@ -1,0 +1,43 @@
+meta {
+  name: Create begin upload
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/extraction/documents/begin-upload
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "batch_id": null,
+        "content_type": null,
+        "file_hash": null,
+        "file_size_bytes": null,
+        "file_type": "pdf",
+        "filename": "string",
+        "parent_document_id": null,
+        "workspace_id": "00000000-0000-0000-0000-000000000000"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

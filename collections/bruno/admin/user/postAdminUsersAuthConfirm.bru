@@ -1,0 +1,33 @@
+meta {
+  name: Create confirm
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/users/auth/confirm
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "confirmation_token": "string",
+        "email": "string"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Confirm a user's email address using a confirmation token
+}

@@ -1,0 +1,32 @@
+meta {
+  name: Create import
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/agents/import
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "data": {}
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Import agent from exported JSON
+}

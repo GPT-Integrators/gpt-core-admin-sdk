@@ -1,0 +1,39 @@
+meta {
+  name: Create messages
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/messages
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "content": "string",
+        "metadata": null,
+        "role": "user",
+        "thread_id": "00000000-0000-0000-0000-000000000000"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

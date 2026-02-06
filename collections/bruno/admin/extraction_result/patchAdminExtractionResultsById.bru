@@ -1,0 +1,45 @@
+meta {
+  name: Update results
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/extraction/results/{id}
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "classification_confidence": null,
+        "credits_used": null,
+        "document_type": null,
+        "domain": null,
+        "extracted_fields": null,
+        "municipality": null,
+        "processing_time_ms": null,
+        "state": null,
+        "status": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Updates specific fields of an existing resource.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

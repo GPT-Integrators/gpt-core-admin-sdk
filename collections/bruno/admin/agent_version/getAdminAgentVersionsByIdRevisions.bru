@@ -1,0 +1,19 @@
+meta {
+  name: Get revisions
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/agent-versions/{id}/revisions
+  body: none
+  auth: inherit
+}
+
+docs {
+  Retrieves a single resource by ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

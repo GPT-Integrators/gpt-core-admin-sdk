@@ -1,0 +1,41 @@
+meta {
+  name: Create advanced
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/ai/search/advanced
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "date_from": null,
+        "date_to": null,
+        "document_types": null,
+        "query": "string",
+        "top_k": null,
+        "workspace_ids": null
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

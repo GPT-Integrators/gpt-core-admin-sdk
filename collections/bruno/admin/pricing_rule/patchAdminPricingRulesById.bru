@@ -1,0 +1,37 @@
+meta {
+  name: Update pricing rules
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/pricing-rules/{id}
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "cost_credits": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Updates specific fields of an existing resource.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

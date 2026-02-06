@@ -1,0 +1,31 @@
+meta {
+  name: Update default
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/payment-methods/{id}/default
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {},
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Set this payment method as default for the customer
+}

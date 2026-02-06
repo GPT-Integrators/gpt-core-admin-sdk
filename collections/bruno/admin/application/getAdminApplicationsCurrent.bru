@@ -1,0 +1,15 @@
+meta {
+  name: List current
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/applications/current
+  body: none
+  auth: inherit
+}
+
+docs {
+  Get the current application based on x-application-key header context
+}

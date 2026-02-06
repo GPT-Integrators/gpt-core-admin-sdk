@@ -1,0 +1,28 @@
+meta {
+  name: List latest
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/legal-acceptances/latest
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+  user_id: 
+  document_type: 
+}
+
+docs {
+  Lists resources with optional filtering, sorting, and pagination.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

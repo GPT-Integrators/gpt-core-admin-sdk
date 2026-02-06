@@ -1,0 +1,46 @@
+meta {
+  name: Create legal documents
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/legal-documents
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "active_from": null,
+        "active_until": null,
+        "application_id": null,
+        "content": "string",
+        "document_type": "terms_of_service",
+        "is_active": null,
+        "locale": null,
+        "region": null,
+        "requires_acceptance": null,
+        "title": "string",
+        "version": "string"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

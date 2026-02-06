@@ -1,0 +1,33 @@
+meta {
+  name: Update storage
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/wallet/storage
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "quantity": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Purchase storage blocks
+}

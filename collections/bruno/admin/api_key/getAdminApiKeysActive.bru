@@ -1,0 +1,22 @@
+meta {
+  name: List active
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/api-keys/active
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  List only active API keys
+}

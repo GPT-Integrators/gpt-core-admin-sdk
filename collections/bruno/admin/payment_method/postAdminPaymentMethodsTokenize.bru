@@ -1,0 +1,43 @@
+meta {
+  name: Create tokenize
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/payment-methods/tokenize
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "billing_address": "string",
+        "billing_city": "string",
+        "billing_state": "string",
+        "card_number": "string",
+        "customer_id": null,
+        "cvc": "string",
+        "exp_month": 0,
+        "exp_year": 0,
+        "holder_name": "string",
+        "nickname": null,
+        "phone": null,
+        "zip_code": "string"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Create a payment method via direct proxy tokenization (S2S)
+}

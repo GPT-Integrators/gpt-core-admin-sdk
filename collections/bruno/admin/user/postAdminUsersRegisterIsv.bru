@@ -1,0 +1,38 @@
+meta {
+  name: Create register isv
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/users/register-isv
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "app_description": null,
+        "app_name": "string",
+        "app_slug": "string",
+        "email": "string",
+        "initial_credits": null,
+        "password": "string",
+        "tenant_name": "string"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Platform Admin action to register a new ISV (User + Tenant + App)
+}

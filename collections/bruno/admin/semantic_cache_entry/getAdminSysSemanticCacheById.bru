@@ -1,0 +1,24 @@
+meta {
+  name: Get semantic cache
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/sys/semantic-cache/{id}
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Retrieves a single resource by ID.
+
+**Authentication:** Required - System admin token
+**Rate Limit:** No limit (system admin)
+
+}

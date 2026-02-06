@@ -1,0 +1,34 @@
+meta {
+  name: Update allocate
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/api-keys/{id}/allocate
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "amount": 0,
+        "description": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  DEPRECATED: Use set_budget instead. Allocate credits to the account associated with this API Key
+}

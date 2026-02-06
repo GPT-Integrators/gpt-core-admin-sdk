@@ -1,0 +1,41 @@
+meta {
+  name: Create platform pricing configs
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/platform-pricing-configs
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "description": null,
+        "floor_price": null,
+        "hard_cost": null,
+        "margin_percent": null,
+        "metadata": null,
+        "service_id": "string"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

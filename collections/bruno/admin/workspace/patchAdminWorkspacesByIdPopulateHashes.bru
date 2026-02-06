@@ -1,0 +1,31 @@
+meta {
+  name: Update populate hashes
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/workspaces/{id}/populate-hashes
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {},
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Enqueue a background job to populate file hashes for documents missing them
+}

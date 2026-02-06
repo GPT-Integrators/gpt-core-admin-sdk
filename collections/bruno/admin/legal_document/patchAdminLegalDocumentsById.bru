@@ -1,0 +1,45 @@
+meta {
+  name: Update legal documents
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/legal-documents/{id}
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "active_from": null,
+        "active_until": null,
+        "content": null,
+        "is_active": null,
+        "locale": null,
+        "region": null,
+        "requires_acceptance": null,
+        "title": null,
+        "version": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Updates specific fields of an existing resource.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

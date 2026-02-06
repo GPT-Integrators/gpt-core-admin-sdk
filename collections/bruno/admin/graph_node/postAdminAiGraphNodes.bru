@@ -1,0 +1,38 @@
+meta {
+  name: Create nodes
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/ai/graph/nodes
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "document_id": null,
+        "label": "string",
+        "properties": null
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

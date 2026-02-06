@@ -1,0 +1,33 @@
+meta {
+  name: Create agent version comparisons
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/agent-version-comparisons
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "version_a_id": "00000000-0000-0000-0000-000000000000",
+        "version_b_id": "00000000-0000-0000-0000-000000000000"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Compare two agent versions and return the differences
+}

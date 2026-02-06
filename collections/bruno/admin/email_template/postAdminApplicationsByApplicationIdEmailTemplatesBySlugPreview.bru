@@ -1,0 +1,23 @@
+meta {
+  name: Create preview
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/applications/{application_id}/email-templates/{slug}/preview
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "data": {
+      "sample_data": null
+    }
+  }
+}
+
+docs {
+  Preview email template with sample data
+}

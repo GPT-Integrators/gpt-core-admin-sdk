@@ -1,0 +1,27 @@
+meta {
+  name: List for application
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/legal-documents/for-application
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+  application_id: 
+}
+
+docs {
+  Lists resources with optional filtering, sorting, and pagination.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

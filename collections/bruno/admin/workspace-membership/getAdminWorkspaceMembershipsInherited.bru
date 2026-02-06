@@ -1,0 +1,23 @@
+meta {
+  name: List inherited
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/workspace-memberships/inherited
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+  workspace_id: 
+}
+
+docs {
+  List workspace members including inherited org owners/admins
+}

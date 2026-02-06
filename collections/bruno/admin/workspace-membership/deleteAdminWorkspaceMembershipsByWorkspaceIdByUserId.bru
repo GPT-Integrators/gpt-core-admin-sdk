@@ -1,0 +1,24 @@
+meta {
+  name: Delete workspace memberships
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{baseUrl}}/admin/workspace-memberships/{workspace_id}/{user_id}
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Deletes a resource permanently. This action cannot be undone.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

@@ -1,0 +1,47 @@
+meta {
+  name: Create payments
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/payments
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "amount": 0,
+        "credits_added": null,
+        "credits_used": null,
+        "currency": null,
+        "customer_id": null,
+        "description": null,
+        "error_message": null,
+        "metadata": null,
+        "operation": null,
+        "provider_reference": null,
+        "service_id": null,
+        "source": "string",
+        "status": null,
+        "tenant_id": null,
+        "transaction_type": null,
+        "type": null
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Process a payment (Auth + Capture)
+}

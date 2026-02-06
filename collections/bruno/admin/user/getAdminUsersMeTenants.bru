@@ -1,0 +1,15 @@
+meta {
+  name: List tenants
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/users/me/tenants
+  body: none
+  auth: inherit
+}
+
+docs {
+  List all tenants the current user belongs to with their roles and permissions
+}

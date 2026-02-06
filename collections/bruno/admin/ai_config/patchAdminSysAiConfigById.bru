@@ -1,0 +1,40 @@
+meta {
+  name: Update ai config
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/sys/ai-config/{id}
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "cloud_model": null,
+        "embedding_model": null,
+        "model_overrides": null,
+        "vector_dimensions": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Updates specific fields of an existing resource.
+
+**Authentication:** Required - System admin token
+**Rate Limit:** No limit (system admin)
+
+}

@@ -1,0 +1,33 @@
+meta {
+  name: Update reset period
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/api-keys/{id}/reset-period
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "period_started_at": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Reset budget period (for testing or manual reset)
+}

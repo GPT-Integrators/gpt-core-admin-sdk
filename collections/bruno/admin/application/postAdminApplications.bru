@@ -1,0 +1,51 @@
+meta {
+  name: Create applications
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/applications
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "api_key": null,
+        "api_key_type": "server",
+        "badge_url": null,
+        "base_url": null,
+        "default_free_credits": null,
+        "description": null,
+        "invite_only": null,
+        "logo_url": null,
+        "name": "string",
+        "oauth": null,
+        "owner_id": null,
+        "require_email_verification": null,
+        "sender_email": null,
+        "sender_name": null,
+        "slug": "string",
+        "vanity_slug": null
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

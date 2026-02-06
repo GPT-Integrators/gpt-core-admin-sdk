@@ -1,0 +1,22 @@
+meta {
+  name: List summary
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/search/analytics/summary
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Aggregated search analytics summary (platform admin only)
+}

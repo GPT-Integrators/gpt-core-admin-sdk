@@ -1,0 +1,29 @@
+meta {
+  name: Create search
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/training-examples/search
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "data": {
+      "agent_id": "00000000-0000-0000-0000-000000000000",
+      "limit": null,
+      "query_embedding": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

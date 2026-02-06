@@ -1,0 +1,23 @@
+meta {
+  name: List activity
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/users/me/activity
+  body: none
+  auth: inherit
+}
+
+query {
+  ~activity_type: 
+  ~limit: 
+  ~offset: 
+  tenant_id: 
+  ~workspace_id: 
+}
+
+docs {
+  Get activity feed for the user's tenant context
+}

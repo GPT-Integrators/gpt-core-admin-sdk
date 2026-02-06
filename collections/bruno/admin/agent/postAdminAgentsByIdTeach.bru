@@ -1,0 +1,41 @@
+meta {
+  name: Create teach
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/agents/{id}/teach
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "confirmed_fields": null,
+        "correction_reasons": null,
+        "corrections": {},
+        "document_id": "00000000-0000-0000-0000-000000000000",
+        "training_note": null,
+        "verify_remaining": null
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

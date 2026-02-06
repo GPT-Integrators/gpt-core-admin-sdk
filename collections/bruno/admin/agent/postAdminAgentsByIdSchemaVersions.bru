@@ -1,0 +1,27 @@
+meta {
+  name: Create schema versions
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/agents/{id}/schema-versions
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "data": {
+      "changes_summary": null,
+      "fields": null,
+      "prompt_template": "string",
+      "schema_definition": {},
+      "version_number": "string"
+    }
+  }
+}
+
+docs {
+  Create a new schema version for this agent
+}

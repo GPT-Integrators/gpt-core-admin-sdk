@@ -1,0 +1,20 @@
+meta {
+  name: Get metrics
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/agent-versions/{id}/metrics
+  body: none
+  auth: inherit
+}
+
+query {
+  ~date_range_end: 
+  ~date_range_start: 
+}
+
+docs {
+  Get performance metrics for this version
+}

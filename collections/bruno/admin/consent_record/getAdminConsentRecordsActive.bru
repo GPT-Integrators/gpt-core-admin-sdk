@@ -1,0 +1,27 @@
+meta {
+  name: List active
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/consent-records/active
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+  user_id: 
+}
+
+docs {
+  Lists resources with optional filtering, sorting, and pagination.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

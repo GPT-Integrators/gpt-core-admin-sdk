@@ -1,0 +1,15 @@
+meta {
+  name: Get schema versions
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/agents/{id}/schema-versions
+  body: none
+  auth: inherit
+}
+
+docs {
+  List all schema versions for this agent
+}

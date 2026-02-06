@@ -1,0 +1,42 @@
+meta {
+  name: Create tenant pricing overrides
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/tenant-pricing-overrides
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "application_id": "00000000-0000-0000-0000-000000000000",
+        "expires_at": null,
+        "floor_price": null,
+        "margin_percent": null,
+        "reason": null,
+        "service_id": "string",
+        "tenant_id": "00000000-0000-0000-0000-000000000000"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

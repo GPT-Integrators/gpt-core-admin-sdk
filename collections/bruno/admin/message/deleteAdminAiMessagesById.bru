@@ -1,0 +1,24 @@
+meta {
+  name: Delete messages
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{baseUrl}}/admin/ai/messages/{id}
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Deletes a resource permanently. This action cannot be undone.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

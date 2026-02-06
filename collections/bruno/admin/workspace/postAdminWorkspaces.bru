@@ -1,0 +1,49 @@
+meta {
+  name: Create workspaces
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/workspaces
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "app": null,
+        "application_id": null,
+        "deduplicate_uploads": null,
+        "description": null,
+        "expires_at": null,
+        "initial_credits": null,
+        "is_default": null,
+        "low_balance_threshold": null,
+        "name": "string",
+        "renewal_params": null,
+        "settings": null,
+        "slug": "string",
+        "tenant_id": "00000000-0000-0000-0000-000000000000",
+        "vanity_slug": null
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

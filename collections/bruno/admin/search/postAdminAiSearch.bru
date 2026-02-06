@@ -1,0 +1,37 @@
+meta {
+  name: Create search
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/ai/search
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "query": "string",
+        "top_k": null
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

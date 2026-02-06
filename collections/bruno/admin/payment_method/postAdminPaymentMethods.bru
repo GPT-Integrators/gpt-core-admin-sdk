@@ -1,0 +1,45 @@
+meta {
+  name: Create payment methods
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/payment-methods
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "brand": null,
+        "customer_id": null,
+        "exp_month": null,
+        "exp_year": null,
+        "is_default": null,
+        "last4": null,
+        "nickname": null,
+        "provider": null,
+        "provider_token": "string",
+        "type": "card"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

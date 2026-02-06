@@ -1,0 +1,38 @@
+meta {
+  name: Create bulk delete
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/documents/bulk-delete
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "ids": [
+          "00000000-0000-0000-0000-000000000000"
+        ]
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

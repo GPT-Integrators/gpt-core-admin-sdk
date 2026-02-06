@@ -1,0 +1,31 @@
+meta {
+  name: Update confirm email
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/users/{id}/confirm-email
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {},
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Admin manually confirms user's email
+}

@@ -1,0 +1,33 @@
+meta {
+  name: Update storage settings
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/workspaces/{id}/storage-settings
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "settings": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Update workspace storage settings - tenant admin/owner only
+}

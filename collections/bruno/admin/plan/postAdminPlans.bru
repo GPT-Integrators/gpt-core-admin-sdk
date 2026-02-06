@@ -1,0 +1,50 @@
+meta {
+  name: Create plans
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/plans
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "application_id": null,
+        "billing_interval": null,
+        "initial_credits": null,
+        "is_addon": null,
+        "max_renewals": null,
+        "monthly_credits": 0,
+        "monthly_price": {
+          "amount": "100.00",
+          "currency": "USD"
+        },
+        "name": "string",
+        "slug": "string",
+        "storage_blocks": null,
+        "storage_days": null,
+        "type": null
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

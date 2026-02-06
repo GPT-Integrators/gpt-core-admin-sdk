@@ -1,0 +1,35 @@
+meta {
+  name: Update grant credits
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/applications/{id}/grant-credits
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "amount": 0,
+        "description": null,
+        "tenant_id": "00000000-0000-0000-0000-000000000000"
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Allocates promotional credits to a specific tenant on behalf of the application
+}

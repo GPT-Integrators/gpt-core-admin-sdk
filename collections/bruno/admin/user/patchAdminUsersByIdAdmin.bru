@@ -1,0 +1,35 @@
+meta {
+  name: Update admin
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/admin/users/{id}/admin
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "is_platform_admin": null,
+        "password": null,
+        "password_confirmation": null
+      },
+      "id": "string",
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Admin-only user management (platform admins) - promotes/demotes admin status
+}

@@ -1,0 +1,24 @@
+meta {
+  name: List stats
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/api-keys/stats
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+  tenant_id: 
+  ~key_type: 
+}
+
+docs {
+  Get API keys with usage statistics for a tenant
+}

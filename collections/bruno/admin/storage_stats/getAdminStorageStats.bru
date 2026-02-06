@@ -1,0 +1,22 @@
+meta {
+  name: List stats
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/storage/stats
+  body: none
+  auth: inherit
+}
+
+query {
+  ~filter: 
+  ~sort: 
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Get platform-wide storage statistics
+}

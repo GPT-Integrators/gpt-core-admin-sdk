@@ -1,0 +1,44 @@
+meta {
+  name: Create isv settlements
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/isv-settlements
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "application_id": "00000000-0000-0000-0000-000000000000",
+        "gross_revenue": null,
+        "isv_id": "00000000-0000-0000-0000-000000000000",
+        "net_revenue": null,
+        "period_end": "2026-02-04",
+        "period_start": "2026-02-04",
+        "platform_fee": null,
+        "settled_at": null,
+        "settlement_status": null
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

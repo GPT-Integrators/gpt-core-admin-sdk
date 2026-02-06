@@ -1,0 +1,38 @@
+meta {
+  name: Create embed
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/ai/embed
+  body: json
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+body:json {
+  {
+    "data": {
+      "attributes": {
+        "model": null,
+        "text": "string",
+        "workspace_id": "00000000-0000-0000-0000-000000000000"
+      },
+      "relationships": {},
+      "type": null
+    }
+  }
+}
+
+docs {
+  Creates a new resource. Returns the created resource with generated ID.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}

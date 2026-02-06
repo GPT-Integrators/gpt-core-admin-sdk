@@ -1,0 +1,24 @@
+meta {
+  name: Delete webhook configs
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{baseUrl}}/admin/webhook-configs/{id}
+  body: none
+  auth: inherit
+}
+
+query {
+  ~include: 
+  ~fields: 
+}
+
+docs {
+  Deletes a resource permanently. This action cannot be undone.
+
+**Authentication:** Required - Admin API key
+**Rate Limit:** 1000 requests per minute
+
+}
