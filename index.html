@@ -199,7 +199,6 @@
     .features-grid { grid-template-columns: 1fr; }
     .hero h1 { font-size: 2.25rem; }
     .install-bar { flex-direction: column; padding: 16px; gap: 12px; }
-    .collections-grid { grid-template-columns: 1fr !important; }
   }
   @media (max-width: 1024px) and (min-width: 769px) {
     .features-grid { grid-template-columns: repeat(2, 1fr); }
@@ -261,52 +260,6 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 32px;
-  }
-
-  /* Collections */
-  .collections-section {
-    padding: 0 0 80px;
-  }
-  .collections-section h2 {
-    font-size: 1.75rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 12px;
-    color: #f1f5f9;
-  }
-  .collections-section .subtitle {
-    text-align: center;
-    color: #64748b;
-    margin-bottom: 40px;
-    font-size: 1.05rem;
-  }
-  .collections-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 780px;
-    margin: 0 auto;
-  }
-  .collection-card {
-    background: #111827;
-    border: 1px solid #1e293b;
-    border-radius: 12px;
-    padding: 24px;
-    text-align: center;
-    text-decoration: none;
-    transition: border-color 0.2s, transform 0.15s;
-    display: block;
-  }
-  .collection-card:hover { border-color: #4338ca; transform: translateY(-2px); }
-  .collection-card .tool-name {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #f1f5f9;
-    margin-bottom: 6px;
-  }
-  .collection-card .tool-action {
-    font-size: 0.85rem;
-    color: #818cf8;
   }
 
   /* Footer */
@@ -450,27 +403,6 @@ console.<span class="fn">log</span>(tenants.data);
     </div>
   </section>
 
-  <!-- Collections -->
-  <section class="collections-section">
-    <div class="container">
-      <h2>API Collections</h2>
-      <p class="subtitle">Import into your favorite HTTP client and start testing immediately.</p>
-      <div class="collections-grid">
-        <a href="https://gpt-integrators.github.io/gpt-core-admin-sdk/collections/postman/gpt-core-admin.postman_collection.json" class="collection-card">
-          <div class="tool-name">Postman</div>
-          <div class="tool-action">Download Collection</div>
-        </a>
-        <a href="https://gpt-integrators.github.io/gpt-core-admin-sdk/collections/insomnia/gpt-core-admin.insomnia.json" class="collection-card">
-          <div class="tool-name">Insomnia</div>
-          <div class="tool-action">Download Collection</div>
-        </a>
-        <a href="https://github.com/GPT-Integrators/gpt-core-admin-sdk/tree/main/collections/bruno/admin" class="collection-card">
-          <div class="tool-name">Bruno</div>
-          <div class="tool-action">Browse on GitHub</div>
-        </a>
-      </div>
-    </div>
-  </section>
 
   <footer>
     <div class="container">

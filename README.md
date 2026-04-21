@@ -27,16 +27,6 @@ console.log(tenants.data);
 - **[API Reference](https://gpt-integrators.github.io/gpt-core-admin-sdk/docs/admin)** - Interactive API docs with Try It
 - **[Quick Start Guide](https://gpt-integrators.github.io/gpt-core-admin-sdk/quickstart)** - Getting started guide
 
-## Tooling
-
-Download API collections for your preferred client:
-
-| Tool | Download |
-|------|----------|
-| [Postman](https://www.postman.com) | [Download Collection](https://gpt-integrators.github.io/gpt-core-admin-sdk/collections/postman/gpt-core-admin.postman_collection.json) |
-| [Bruno](https://www.usebruno.com) | [Browse on GitHub](https://github.com/GPT-Integrators/gpt-core-admin-sdk/tree/main/collections/bruno/admin) |
-| [Insomnia](https://insomnia.rest) | [Download Collection](https://gpt-integrators.github.io/gpt-core-admin-sdk/collections/insomnia/gpt-core-admin.insomnia.json) |
-
 ## Packages
 
 | Package | Version | Description |

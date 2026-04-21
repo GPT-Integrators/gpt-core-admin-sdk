@@ -86,7 +86,6 @@ try {
 ## Next Steps
 
 - [Full API Documentation](https://gpt-integrators.github.io/gpt-core-admin-sdk/docs/admin)
-- [API Collections](https://gpt-integrators.github.io/gpt-core-admin-sdk/collections) for Postman/Bruno/Insomnia
 
 ## Need Help?
 
